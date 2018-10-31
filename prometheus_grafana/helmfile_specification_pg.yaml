@@ -1,0 +1,17 @@
+# kubectl config view
+context: k8s.groupsetgo.com   # kube-context (--kube-context)
+ 
+releases:
+  # Published chart example
+  - name: grafana-deploy             # name of this release
+    namespace: prometheus                   # target namespace
+    chart: stable/grafana                   # repository/chart` syntax
+    values:
+      - grafana/values.yaml                 # value files (--values)
+ 
+  # Published chart example
+  - name: prometheus-deploy          # name of this release
+    namespace: prometheus                   # target namespace
+    chart: stable/prometheus                # repository/chart` syntax
+    values:
+      - prometheus/values.yaml              # value files (--values)
