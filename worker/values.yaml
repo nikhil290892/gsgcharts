@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: nikkkhil2908/worker
-  tag: v9
+  tag: v10
   pullPolicy: IfNotPresent
 
 nameOverride: ""

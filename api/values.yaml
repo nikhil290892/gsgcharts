@@ -6,7 +6,7 @@ replicaCount: 3
 
 image:
   repository: nikkkhil2908/gsgkb
-  tag: v46
+  tag: v51
   pullPolicy: IfNotPresent
 
 nameOverride: ""
