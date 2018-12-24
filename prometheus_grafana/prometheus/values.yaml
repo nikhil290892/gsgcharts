@@ -1066,7 +1066,13 @@ serverFiles:
           - source_labels: [__meta_kubernetes_pod_name]
             action: replace
             target_label: kubernetes_pod_name
-
+      - job_name: nginx-ingress
+        metrics_path: /metrics
+        static_configs:
+          - targets:
+            - nginx-nginx-ingress-controller:80
+            - nginx-nginx-ingress-controller-stats:18080
+            - nginx-nginx-ingress-controller-metrics:9913
 # adds additional scrape configs to prometheus.yml
 # must be a string so you have to add a | after extraScrapeConfigs:
 # example adds prometheus-blackbox-exporter scrape config
