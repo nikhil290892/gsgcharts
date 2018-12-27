@@ -1,0 +1,721 @@
+
+> groupsetgoapp@1.0.0 worker /usr/src/worker
+> tsc && NODE_ENV=testing node ./build/worker.js
+
+{"message":"Testing Env enabled on our server","level":"info"}
+Connecting Db
+{"message":"Worker Started","level":"info"}
+[0;36mMongoose:[0m admins.ensureIndex({ name: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m users.ensureIndex({ firstName: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m users.distinct([32m'_id'[39m, { status: [32m'PENDING_BLOCK'[39m }, {})
+[0;36mMongoose:[0m categories.ensureIndex({ title: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m events.ensureIndex({ event_seq: [33m1[39m }, { unique: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'OPEN'[39m, [32m'PENDING_CONFIRMATION'[39m, [32m'CONFIRMED'[39m, [32m'PENDING_EXTENSION'[39m, [32m'FULL'[39m, [32m'CANCELED'[39m ] }, step: [33m4[39m }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m ] }, step: [33m4[39m, isSettled: [33mtrue[39m, amountSettled: [33mfalse[39m, dateForSettlement: { [32m'$lte'[39m: [33m1545897189464[39m } }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m, [32m'FULL'[39m, [32m'OPEN'[39m, [32m'CONFIRMED'[39m ] }, [32m'$or'[39m: [ { [32m'eventReminders.preCancellationDate'[39m: [33mfalse[39m }, { [32m'eventReminders.preStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.onStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.savedUserPreStart'[39m: [33mfalse[39m }, { [32m'eventReminders.accountSettle'[39m: [33mfalse[39m } ], isSettled: [33mfalse[39m }, { projection: {} })
+[0;36mMongoose:[0m transactions.ensureIndex({ status: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m recentsearches.ensureIndex({ location: [32m'2dsphere'[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m deletedusers.ensureIndex({ name: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m deleterequests.ensureIndex({ name: [33m1[39m }, { background: [33mtrue[39m })
+(node:22) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+Connect to Database
+[0;36mMongoose:[0m admins.ensureIndex({ email: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m users.ensureIndex({ lastName: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m categories.ensureIndex({ description: [33m1[39m }, { background: [33mtrue[39m })
+{"message":"Chanel created","level":"info"}
+[0;36mMongoose:[0m transactions.ensureIndex({ eventId: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m events.ensureIndex({ title: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m deleterequests.ensureIndex({ email: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m deletedusers.ensureIndex({ email: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m admins.ensureIndex({ phoneNo: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m users.ensureIndex({ email: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m events.ensureIndex({ hashTag: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m transactions.ensureIndex({ bookingId: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m users.ensureIndex({ facebookId: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m admins.ensureIndex({ accessToken: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m events.ensureIndex({ address: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m users.ensureIndex({ googleId: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m transactions.ensureIndex({ transactionSeq: [33m1[39m }, { unique: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m admins.ensureIndex({ passwordResetToken: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m events.ensureIndex({ addressLocation: [32m'2dsphere'[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m users.ensureIndex({ location: [32m'2dsphere'[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m events.ensureIndex({ [32m'budgetBreakdown.title'[39m: [33m1[39m }, { background: [33mtrue[39m })
+[0;36mMongoose:[0m events.ensureIndex({ [32m'budgetBreakdown.cost'[39m: [33m1[39m }, { sparse: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m events.ensureIndex({ addressLocation: [32m'2dsphere'[39m }, { background: [33mtrue[39m })
+181227/075311.116, (1545897191116:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10000) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (11ms)
+181227/075311.373, (1545897191373:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10001) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+{"message":"5c2324f6fa8d0200171d44e4","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6fa8d0200171d44e4","level":"info"}
+{"message":"5c2324f6fa8d0200171d44e6","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6fa8d0200171d44e6","level":"info"}
+{"message":"5c2324f6a2827a0017c8a980","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6a2827a0017c8a980","level":"info"}
+{"message":"5c2324f6264f110017c4dff1","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6264f110017c4dff1","level":"info"}
+{"message":"5c2324f6fa8d0200171d44ea","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6fa8d0200171d44ea","level":"info"}
+{"message":"5c2324f6264f110017c4dff3","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6264f110017c4dff3","level":"info"}
+{"message":"5c2324f6a2827a0017c8a983","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6a2827a0017c8a983","level":"info"}
+{"message":"5c2324f6fa8d0200171d44ec","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6fa8d0200171d44ec","level":"info"}
+{"message":"5c2324f6264f110017c4dff6","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6264f110017c4dff6","level":"info"}
+{"message":"5c2324f6fa8d0200171d44ef","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6fa8d0200171d44ef","level":"info"}
+{"message":"5c2324f6a2827a0017c8a988","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6a2827a0017c8a988","level":"info"}
+{"message":"5c2324f6a2827a0017c8a986","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6a2827a0017c8a986","level":"info"}
+{"message":"5c2324f6fa8d0200171d44f2","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6fa8d0200171d44f2","level":"info"}
+{"message":"5c2324f6264f110017c4dffb","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6264f110017c4dffb","level":"info"}
+{"message":"5c2324f6264f110017c4dff9","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6264f110017c4dff9","level":"info"}
+{"message":"5c2324f6264f110017c4dffd","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6264f110017c4dffd","level":"info"}
+{"message":"5c2324f6a2827a0017c8a98c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6a2827a0017c8a98c","level":"info"}
+{"message":"5c2324f6264f110017c4e000","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6264f110017c4e000","level":"info"}
+{"message":"5c2324f6a2827a0017c8a98f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6a2827a0017c8a98f","level":"info"}
+{"message":"5c2324f6a2827a0017c8a993","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6a2827a0017c8a993","level":"info"}
+{"message":"5c2324f6a2827a0017c8a991","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f6a2827a0017c8a991","level":"info"}
+{"message":"5c2324f7fa8d0200171d44fd","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2324f7fa8d0200171d44fd","level":"info"}
+{"message":"5c232661fa8d0200171d4525","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661fa8d0200171d4525","level":"info"}
+{"message":"5c232661264f110017c4e034","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e034","level":"info"}
+{"message":"5c232661264f110017c4e037","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e037","level":"info"}
+{"message":"5c232661264f110017c4e03c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e03c","level":"info"}
+{"message":"5c232661a2827a0017c8a9cf","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9cf","level":"info"}
+{"message":"5c232661a2827a0017c8a9d1","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9d1","level":"info"}
+{"message":"5c232661264f110017c4e042","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e042","level":"info"}
+{"message":"5c232661264f110017c4e044","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e044","level":"info"}
+{"message":"5c232661fa8d0200171d452f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661fa8d0200171d452f","level":"info"}
+{"message":"5c232661264f110017c4e048","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e048","level":"info"}
+{"message":"5c232661264f110017c4e04d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e04d","level":"info"}
+{"message":"5c232661264f110017c4e04b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e04b","level":"info"}
+{"message":"5c232661fa8d0200171d4532","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661fa8d0200171d4532","level":"info"}
+{"message":"5c232661264f110017c4e051","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661264f110017c4e051","level":"info"}
+{"message":"5c232661fa8d0200171d4537","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661fa8d0200171d4537","level":"info"}
+{"message":"5c232661fa8d0200171d4535","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661fa8d0200171d4535","level":"info"}
+{"message":"5c232661a2827a0017c8a9d6","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9d6","level":"info"}
+{"message":"5c232661fa8d0200171d453b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661fa8d0200171d453b","level":"info"}
+{"message":"5c232661fa8d0200171d453d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661fa8d0200171d453d","level":"info"}
+{"message":"5c232661fa8d0200171d453f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661fa8d0200171d453f","level":"info"}
+{"message":"5c232661a2827a0017c8a9d9","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9d9","level":"info"}
+{"message":"5c232661a2827a0017c8a9e0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9e0","level":"info"}
+{"message":"5c232661a2827a0017c8a9dc","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9dc","level":"info"}
+{"message":"5c232661a2827a0017c8a9de","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9de","level":"info"}
+{"message":"5c232661a2827a0017c8a9e5","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9e5","level":"info"}
+{"message":"5c232661a2827a0017c8a9e9","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9e9","level":"info"}
+{"message":"5c232661a2827a0017c8a9ed","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232661a2827a0017c8a9ed","level":"info"}
+{"message":"5c232662fa8d0200171d4575","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232662fa8d0200171d4575","level":"info"}
+{"message":"5c232662264f110017c4e08b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232662264f110017c4e08b","level":"info"}
+{"message":"5c232662a2827a0017c8aa2d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c232662a2827a0017c8aa2d","level":"info"}
+{"message":"5c2328bafa8d0200171d457f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bafa8d0200171d457f","level":"info"}
+{"message":"5c2328baa2827a0017c8aa3a","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328baa2827a0017c8aa3a","level":"info"}
+{"message":"5c2328baa2827a0017c8aa3c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328baa2827a0017c8aa3c","level":"info"}
+{"message":"5c2328baa2827a0017c8aa3f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328baa2827a0017c8aa3f","level":"info"}
+{"message":"5c2328ba264f110017c4e09a","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328ba264f110017c4e09a","level":"info"}
+{"message":"5c2328bafa8d0200171d458c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bafa8d0200171d458c","level":"info"}
+{"message":"5c2328ba264f110017c4e09c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328ba264f110017c4e09c","level":"info"}
+{"message":"5c2328baa2827a0017c8aa43","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328baa2827a0017c8aa43","level":"info"}
+{"message":"5c2328bafa8d0200171d458f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bafa8d0200171d458f","level":"info"}
+{"message":"5c2328ba264f110017c4e0a0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328ba264f110017c4e0a0","level":"info"}
+{"message":"5c2328ba264f110017c4e0a3","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328ba264f110017c4e0a3","level":"info"}
+{"message":"5c2328bafa8d0200171d4592","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bafa8d0200171d4592","level":"info"}
+{"message":"5c2328bb264f110017c4e0ad","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0ad","level":"info"}
+{"message":"5c2328bb264f110017c4e0b0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0b0","level":"info"}
+{"message":"5c2328bba2827a0017c8aa54","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa54","level":"info"}
+{"message":"5c2328bbfa8d0200171d459f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d459f","level":"info"}
+{"message":"5c2328bba2827a0017c8aa57","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa57","level":"info"}
+{"message":"5c2328bba2827a0017c8aa65","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa65","level":"info"}
+{"message":"5c2328bba2827a0017c8aa61","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa61","level":"info"}
+{"message":"5c2328bba2827a0017c8aa63","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa63","level":"info"}
+{"message":"5c2328bb264f110017c4e0c3","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0c3","level":"info"}
+{"message":"5c2328bb264f110017c4e0c5","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0c5","level":"info"}
+{"message":"5c2328bb264f110017c4e0c9","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0c9","level":"info"}
+{"message":"5c2328bb264f110017c4e0c7","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0c7","level":"info"}
+{"message":"5c2328bb264f110017c4e0d2","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0d2","level":"info"}
+{"message":"5c2328bb264f110017c4e0d0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0d0","level":"info"}
+{"message":"5c2328bb264f110017c4e0ce","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0ce","level":"info"}
+{"message":"5c2328bb264f110017c4e0d4","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0d4","level":"info"}
+{"message":"5c2328bba2827a0017c8aa74","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa74","level":"info"}
+{"message":"5c2328bba2827a0017c8aa76","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa76","level":"info"}
+{"message":"5c2328bba2827a0017c8aa7c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa7c","level":"info"}
+{"message":"5c2328bba2827a0017c8aa78","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa78","level":"info"}
+{"message":"5c2328bba2827a0017c8aa7a","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa7a","level":"info"}
+{"message":"5c2328bbfa8d0200171d45b3","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45b3","level":"info"}
+{"message":"5c2328bbfa8d0200171d45ba","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45ba","level":"info"}
+{"message":"5c2328bbfa8d0200171d45b8","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45b8","level":"info"}
+{"message":"5c2328bbfa8d0200171d45be","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45be","level":"info"}
+{"message":"5c2328bbfa8d0200171d45bc","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45bc","level":"info"}
+{"message":"5c2328bbfa8d0200171d45c4","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45c4","level":"info"}
+{"message":"5c2328bbfa8d0200171d45c0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45c0","level":"info"}
+{"message":"5c2328bbfa8d0200171d45c6","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45c6","level":"info"}
+{"message":"5c2328bbfa8d0200171d45c2","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45c2","level":"info"}
+{"message":"5c2328bba2827a0017c8aa91","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa91","level":"info"}
+{"message":"5c2328bba2827a0017c8aa93","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa93","level":"info"}
+{"message":"5c2328bba2827a0017c8aa95","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa95","level":"info"}
+{"message":"5c2328bba2827a0017c8aa97","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa97","level":"info"}
+{"message":"5c2328bb264f110017c4e0ed","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0ed","level":"info"}
+{"message":"5c2328bb264f110017c4e0ef","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0ef","level":"info"}
+{"message":"5c2328bba2827a0017c8aa99","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa99","level":"info"}
+{"message":"5c2328bba2827a0017c8aa9b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa9b","level":"info"}
+{"message":"5c2328bba2827a0017c8aa9d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aa9d","level":"info"}
+{"message":"5c2328bbfa8d0200171d45d4","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45d4","level":"info"}
+{"message":"5c2328bb264f110017c4e10d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e10d","level":"info"}
+{"message":"5c2328bb264f110017c4e103","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e103","level":"info"}
+{"message":"5c2328bb264f110017c4e10b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e10b","level":"info"}
+{"message":"5c2328bb264f110017c4e105","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e105","level":"info"}
+{"message":"5c2328bb264f110017c4e101","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e101","level":"info"}
+{"message":"5c2328bb264f110017c4e107","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e107","level":"info"}
+{"message":"5c2328bb264f110017c4e0ff","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e0ff","level":"info"}
+{"message":"5c2328bb264f110017c4e10f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e10f","level":"info"}
+{"message":"5c2328bb264f110017c4e109","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e109","level":"info"}
+{"message":"5c2328bbfa8d0200171d45ea","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45ea","level":"info"}
+{"message":"5c2328bbfa8d0200171d45e0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45e0","level":"info"}
+{"message":"5c2328bbfa8d0200171d45ec","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45ec","level":"info"}
+{"message":"5c2328bbfa8d0200171d45e2","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45e2","level":"info"}
+{"message":"5c2328bbfa8d0200171d45e4","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45e4","level":"info"}
+{"message":"5c2328bbfa8d0200171d45e6","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45e6","level":"info"}
+{"message":"5c2328bbfa8d0200171d45e8","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45e8","level":"info"}
+{"message":"5c2328bbfa8d0200171d45ee","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d45ee","level":"info"}
+{"message":"5c2328bba2827a0017c8aabc","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aabc","level":"info"}
+{"message":"5c2328bbfa8d0200171d4600","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d4600","level":"info"}
+{"message":"5c2328bba2827a0017c8aabe","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aabe","level":"info"}
+{"message":"5c2328bbfa8d0200171d460a","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d460a","level":"info"}
+{"message":"5c2328bbfa8d0200171d460c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d460c","level":"info"}
+{"message":"5c2328bba2827a0017c8aad1","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aad1","level":"info"}
+{"message":"5c2328bb264f110017c4e134","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e134","level":"info"}
+{"message":"5c2328bb264f110017c4e136","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e136","level":"info"}
+{"message":"5c2328bba2827a0017c8aae3","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bba2827a0017c8aae3","level":"info"}
+{"message":"5c2328bbfa8d0200171d461f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bbfa8d0200171d461f","level":"info"}
+{"message":"5c2328bb264f110017c4e156","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e156","level":"info"}
+{"message":"5c2328bb264f110017c4e158","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bb264f110017c4e158","level":"info"}
+{"message":"5c2328bca2827a0017c8ab0c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab0c","level":"info"}
+{"message":"5c2328bca2827a0017c8ab0e","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab0e","level":"info"}
+{"message":"5c2328bcfa8d0200171d4630","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4630","level":"info"}
+{"message":"5c2328bcfa8d0200171d4636","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4636","level":"info"}
+{"message":"5c2328bcfa8d0200171d4634","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4634","level":"info"}
+{"message":"5c2328bcfa8d0200171d4632","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4632","level":"info"}
+{"message":"5c2328bc264f110017c4e17d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e17d","level":"info"}
+{"message":"5c2328bc264f110017c4e17f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e17f","level":"info"}
+{"message":"5c2328bc264f110017c4e179","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e179","level":"info"}
+{"message":"5c2328bc264f110017c4e17b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e17b","level":"info"}
+{"message":"5c2328bc264f110017c4e185","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e185","level":"info"}
+{"message":"5c2328bc264f110017c4e181","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e181","level":"info"}
+{"message":"5c2328bc264f110017c4e183","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e183","level":"info"}
+{"message":"5c2328bcfa8d0200171d4658","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4658","level":"info"}
+{"message":"5c2328bcfa8d0200171d4656","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4656","level":"info"}
+{"message":"5c2328bca2827a0017c8ab2f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab2f","level":"info"}
+{"message":"5c2328bca2827a0017c8ab31","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab31","level":"info"}
+{"message":"5c2328bca2827a0017c8ab2b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab2b","level":"info"}
+{"message":"5c2328bca2827a0017c8ab29","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab29","level":"info"}
+{"message":"5c2328bca2827a0017c8ab2d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab2d","level":"info"}
+{"message":"5c2328bca2827a0017c8ab35","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab35","level":"info"}
+{"message":"5c2328bca2827a0017c8ab33","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab33","level":"info"}
+{"message":"5c2328bc264f110017c4e1b6","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e1b6","level":"info"}
+{"message":"5c2328bca2827a0017c8ab55","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab55","level":"info"}
+{"message":"5c2328bca2827a0017c8ab57","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab57","level":"info"}
+{"message":"5c2328bca2827a0017c8ab59","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab59","level":"info"}
+{"message":"5c2328bcfa8d0200171d4691","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4691","level":"info"}
+{"message":"5c2328bcfa8d0200171d468f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d468f","level":"info"}
+{"message":"5c2328bcfa8d0200171d468d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d468d","level":"info"}
+{"message":"5c2328bcfa8d0200171d46ba","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d46ba","level":"info"}
+{"message":"5c2328bcfa8d0200171d46bc","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d46bc","level":"info"}
+{"message":"5c2328bcfa8d0200171d46b8","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d46b8","level":"info"}
+{"message":"5c2328bca2827a0017c8ab7c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab7c","level":"info"}
+{"message":"5c2328bca2827a0017c8ab7e","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab7e","level":"info"}
+{"message":"5c2328bca2827a0017c8ab80","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab80","level":"info"}
+{"message":"5c2328bca2827a0017c8ab82","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab82","level":"info"}
+{"message":"5c2328bca2827a0017c8ab84","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8ab84","level":"info"}
+{"message":"5c2328bc264f110017c4e1f4","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e1f4","level":"info"}
+{"message":"5c2328bc264f110017c4e1f2","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e1f2","level":"info"}
+{"message":"5c2328bc264f110017c4e1f0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e1f0","level":"info"}
+{"message":"5c2328bc264f110017c4e1f6","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e1f6","level":"info"}
+{"message":"5c2328bcfa8d0200171d46e0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d46e0","level":"info"}
+{"message":"5c2328bcfa8d0200171d46e2","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d46e2","level":"info"}
+{"message":"5c2328bca2827a0017c8abaa","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bca2827a0017c8abaa","level":"info"}
+{"message":"5c2328bc264f110017c4e221","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e221","level":"info"}
+{"message":"5c2328bc264f110017c4e21f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e21f","level":"info"}
+{"message":"5c2328bc264f110017c4e21d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e21d","level":"info"}
+{"message":"5c2328bc264f110017c4e223","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e223","level":"info"}
+{"message":"5c2328bc264f110017c4e21b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bc264f110017c4e21b","level":"info"}
+{"message":"5c2328bcfa8d0200171d4707","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4707","level":"info"}
+{"message":"5c2328bcfa8d0200171d470f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d470f","level":"info"}
+{"message":"5c2328bcfa8d0200171d4711","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4711","level":"info"}
+{"message":"5c2328bcfa8d0200171d4709","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d4709","level":"info"}
+{"message":"5c2328bcfa8d0200171d470b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d470b","level":"info"}
+{"message":"5c2328bcfa8d0200171d470d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bcfa8d0200171d470d","level":"info"}
+{"message":"5c2328bda2827a0017c8abd0","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8abd0","level":"info"}
+{"message":"5c2328bda2827a0017c8abd2","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8abd2","level":"info"}
+{"message":"5c2328bd264f110017c4e261","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e261","level":"info"}
+{"message":"5c2328bd264f110017c4e267","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e267","level":"info"}
+{"message":"5c2328bd264f110017c4e25f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e25f","level":"info"}
+{"message":"5c2328bd264f110017c4e263","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e263","level":"info"}
+{"message":"5c2328bd264f110017c4e265","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e265","level":"info"}
+{"message":"5c2328bda2827a0017c8ac04","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac04","level":"info"}
+{"message":"5c2328bda2827a0017c8ac02","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac02","level":"info"}
+{"message":"5c2328bda2827a0017c8abfc","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8abfc","level":"info"}
+{"message":"5c2328bda2827a0017c8abfe","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8abfe","level":"info"}
+{"message":"5c2328bda2827a0017c8ac00","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac00","level":"info"}
+{"message":"5c2328bda2827a0017c8ac12","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac12","level":"info"}
+{"message":"5c2328bda2827a0017c8ac08","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac08","level":"info"}
+{"message":"5c2328bda2827a0017c8ac0e","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac0e","level":"info"}
+{"message":"5c2328bda2827a0017c8ac0a","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac0a","level":"info"}
+{"message":"5c2328bda2827a0017c8ac10","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac10","level":"info"}
+{"message":"5c2328bda2827a0017c8ac16","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac16","level":"info"}
+{"message":"5c2328bda2827a0017c8ac06","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac06","level":"info"}
+{"message":"5c2328bda2827a0017c8ac0c","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac0c","level":"info"}
+{"message":"5c2328bda2827a0017c8ac14","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac14","level":"info"}
+{"message":"5c2328bdfa8d0200171d4747","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d4747","level":"info"}
+{"message":"5c2328bdfa8d0200171d4749","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d4749","level":"info"}
+{"message":"5c2328bdfa8d0200171d474d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d474d","level":"info"}
+{"message":"5c2328bdfa8d0200171d474f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d474f","level":"info"}
+{"message":"5c2328bdfa8d0200171d4751","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d4751","level":"info"}
+{"message":"5c2328bdfa8d0200171d474b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d474b","level":"info"}
+{"message":"5c2328bda2827a0017c8ac5b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac5b","level":"info"}
+{"message":"5c2328bda2827a0017c8ac57","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac57","level":"info"}
+{"message":"5c2328bda2827a0017c8ac5f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac5f","level":"info"}
+{"message":"5c2328bda2827a0017c8ac6f","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac6f","level":"info"}
+{"message":"5c2328bda2827a0017c8ac69","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac69","level":"info"}
+{"message":"5c2328bda2827a0017c8ac59","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac59","level":"info"}
+{"message":"5c2328bda2827a0017c8ac65","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac65","level":"info"}
+{"message":"5c2328bda2827a0017c8ac63","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac63","level":"info"}
+{"message":"5c2328bda2827a0017c8ac73","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac73","level":"info"}
+{"message":"5c2328bda2827a0017c8ac67","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac67","level":"info"}
+{"message":"5c2328bda2827a0017c8ac5d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac5d","level":"info"}
+{"message":"5c2328bda2827a0017c8ac6d","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac6d","level":"info"}
+{"message":"5c2328bda2827a0017c8ac71","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac71","level":"info"}
+{"message":"5c2328bda2827a0017c8ac61","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac61","level":"info"}
+{"message":"5c2328bda2827a0017c8ac6b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bda2827a0017c8ac6b","level":"info"}
+{"message":"5c2328bd264f110017c4e2bf","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2bf","level":"info"}
+{"message":"5c2328bd264f110017c4e2c1","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2c1","level":"info"}
+{"message":"5c2328bd264f110017c4e2c9","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2c9","level":"info"}
+{"message":"5c2328bd264f110017c4e2cb","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2cb","level":"info"}
+{"message":"5c2328bd264f110017c4e2c7","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2c7","level":"info"}
+{"message":"5c2328bd264f110017c4e2af","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2af","level":"info"}
+{"message":"5c2328bd264f110017c4e2bd","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2bd","level":"info"}
+{"message":"5c2328bd264f110017c4e2b3","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2b3","level":"info"}
+{"message":"5c2328bd264f110017c4e2b5","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2b5","level":"info"}
+{"message":"5c2328bd264f110017c4e2b9","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2b9","level":"info"}
+{"message":"5c2328bd264f110017c4e2b7","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2b7","level":"info"}
+{"message":"5c2328bd264f110017c4e2ad","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2ad","level":"info"}
+{"message":"5c2328bd264f110017c4e2cd","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2cd","level":"info"}
+{"message":"5c2328bd264f110017c4e2c3","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2c3","level":"info"}
+{"message":"5c2328bd264f110017c4e2bb","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2bb","level":"info"}
+{"message":"5c2328bd264f110017c4e2b1","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2b1","level":"info"}
+{"message":"5c2328bd264f110017c4e2c5","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bd264f110017c4e2c5","level":"info"}
+{"message":"5c2328bdfa8d0200171d4789","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d4789","level":"info"}
+{"message":"5c2328bdfa8d0200171d478b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d478b","level":"info"}
+{"message":"5c2328bdfa8d0200171d4793","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d4793","level":"info"}
+{"message":"5c2328bdfa8d0200171d4799","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d4799","level":"info"}
+{"message":"5c2328bdfa8d0200171d479b","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d479b","level":"info"}
+{"message":"5c2328bdfa8d0200171d4791","level":"info"}
+{"message":"aaaaaaaaaaaaaaaaaaaaNaN  5c2328bdfa8d0200171d4791","level":"info"}
+{"message":"5c2328bdfa8d0200171d478d","level":"info"}
+181227/075320.942, (1545897200942:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10002) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (16ms)
+181227/075321.191, (1545897201191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10003) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075330.746, (1545897210746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10004) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075331.191, (1545897211191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10005) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075340.746, (1545897220746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10006) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075341.191, (1545897221191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10007) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075350.746, (1545897230746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10008) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075351.191, (1545897231191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10009) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075400.747, (1545897240747:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10010) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/075401.191, (1545897241191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10011) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075410.746, (1545897250746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10012) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075411.191, (1545897251191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10013) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075420.746, (1545897260746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10014) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075421.191, (1545897261191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10015) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075430.746, (1545897270746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10016) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075431.191, (1545897271191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10017) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075440.746, (1545897280746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10018) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/075441.191, (1545897281191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10019) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075450.746, (1545897290746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10020) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075451.191, (1545897291191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10021) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075500.746, (1545897300746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10022) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075501.191, (1545897301191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10023) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+[0;36mMongoose:[0m users.distinct([32m'_id'[39m, { status: [32m'PENDING_BLOCK'[39m }, {})
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'OPEN'[39m, [32m'PENDING_CONFIRMATION'[39m, [32m'CONFIRMED'[39m, [32m'PENDING_EXTENSION'[39m, [32m'FULL'[39m, [32m'CANCELED'[39m ] }, step: [33m4[39m }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m ] }, step: [33m4[39m, isSettled: [33mtrue[39m, amountSettled: [33mfalse[39m, dateForSettlement: { [32m'$lte'[39m: [33m1545897309470[39m } }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m, [32m'FULL'[39m, [32m'OPEN'[39m, [32m'CONFIRMED'[39m ] }, [32m'$or'[39m: [ { [32m'eventReminders.preCancellationDate'[39m: [33mfalse[39m }, { [32m'eventReminders.preStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.onStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.savedUserPreStart'[39m: [33mfalse[39m }, { [32m'eventReminders.accountSettle'[39m: [33mfalse[39m } ], isSettled: [33mfalse[39m }, { projection: {} })
+181227/075511.031, (1545897311031:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10024) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/075511.335, (1545897311335:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10025) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075521.152, (1545897321152:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10026) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075521.190, (1545897321190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10027) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075530.746, (1545897330746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10028) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075531.190, (1545897331190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10029) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075540.746, (1545897340746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10030) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075541.190, (1545897341190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10031) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075550.746, (1545897350746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10032) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075551.190, (1545897351190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10033) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075600.746, (1545897360746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10034) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075601.190, (1545897361190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10035) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075610.747, (1545897370747:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10036) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075611.191, (1545897371191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10037) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075620.746, (1545897380746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10038) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075621.191, (1545897381191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10039) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075630.746, (1545897390746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10040) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075631.191, (1545897391191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10041) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075640.746, (1545897400746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10042) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075641.191, (1545897401191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10043) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075650.746, (1545897410746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10044) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075651.191, (1545897411191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10045) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075700.746, (1545897420746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10046) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075701.190, (1545897421190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10047) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+[0;36mMongoose:[0m users.distinct([32m'_id'[39m, { status: [32m'PENDING_BLOCK'[39m }, {})
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'OPEN'[39m, [32m'PENDING_CONFIRMATION'[39m, [32m'CONFIRMED'[39m, [32m'PENDING_EXTENSION'[39m, [32m'FULL'[39m, [32m'CANCELED'[39m ] }, step: [33m4[39m }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m ] }, step: [33m4[39m, isSettled: [33mtrue[39m, amountSettled: [33mfalse[39m, dateForSettlement: { [32m'$lte'[39m: [33m1545897429472[39m } }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m, [32m'FULL'[39m, [32m'OPEN'[39m, [32m'CONFIRMED'[39m ] }, [32m'$or'[39m: [ { [32m'eventReminders.preCancellationDate'[39m: [33mfalse[39m }, { [32m'eventReminders.preStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.onStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.savedUserPreStart'[39m: [33mfalse[39m }, { [32m'eventReminders.accountSettle'[39m: [33mfalse[39m } ], isSettled: [33mfalse[39m }, { projection: {} })
+181227/075710.904, (1545897430904:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10048) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075711.501, (1545897431501:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10049) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/075721.791, (1545897441791:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10050) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (11ms)
+181227/075721.812, (1545897441812:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10051) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075730.746, (1545897450746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10052) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075731.191, (1545897451191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10053) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075740.746, (1545897460746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10054) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075741.190, (1545897461190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10055) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/075750.746, (1545897470746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10056) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075751.191, (1545897471191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10057) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075800.746, (1545897480746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10058) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (25ms)
+181227/075801.191, (1545897481191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10059) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075810.746, (1545897490746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10060) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/075811.191, (1545897491191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10061) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075820.746, (1545897500746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10062) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075821.191, (1545897501191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10063) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075830.746, (1545897510746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10064) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075831.191, (1545897511191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10065) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075840.746, (1545897520746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10066) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075841.191, (1545897521191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10067) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075850.746, (1545897530746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10068) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075851.191, (1545897531191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10069) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075900.746, (1545897540746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10070) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (3ms)
+181227/075901.191, (1545897541191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10071) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+[0;36mMongoose:[0m users.distinct([32m'_id'[39m, { status: [32m'PENDING_BLOCK'[39m }, {})
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'OPEN'[39m, [32m'PENDING_CONFIRMATION'[39m, [32m'CONFIRMED'[39m, [32m'PENDING_EXTENSION'[39m, [32m'FULL'[39m, [32m'CANCELED'[39m ] }, step: [33m4[39m }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m ] }, step: [33m4[39m, isSettled: [33mtrue[39m, amountSettled: [33mfalse[39m, dateForSettlement: { [32m'$lte'[39m: [33m1545897549479[39m } }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m, [32m'FULL'[39m, [32m'OPEN'[39m, [32m'CONFIRMED'[39m ] }, [32m'$or'[39m: [ { [32m'eventReminders.preCancellationDate'[39m: [33mfalse[39m }, { [32m'eventReminders.preStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.onStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.savedUserPreStart'[39m: [33mfalse[39m }, { [32m'eventReminders.accountSettle'[39m: [33mfalse[39m } ], isSettled: [33mfalse[39m }, { projection: {} })
+181227/075910.913, (1545897550913:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10072) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (11ms)
+181227/075911.388, (1545897551388:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10073) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075922.724, (1545897562724:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10074) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075922.736, (1545897562736:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10075) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075930.746, (1545897570746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10076) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075931.191, (1545897571191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10077) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075940.746, (1545897580746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10078) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075941.191, (1545897581191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10079) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/075950.746, (1545897590746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10080) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/075951.191, (1545897591191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10081) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080000.746, (1545897600746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10082) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080001.191, (1545897601191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10083) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080010.747, (1545897610747:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10084) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080011.191, (1545897611191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10085) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080020.746, (1545897620746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10086) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080021.191, (1545897621191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10087) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080030.746, (1545897630746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10088) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080031.191, (1545897631191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10089) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080040.746, (1545897640746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10090) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/080041.191, (1545897641191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10091) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080050.746, (1545897650746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10092) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080051.191, (1545897651191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10093) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/080100.746, (1545897660746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10094) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080101.191, (1545897661191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10095) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+[0;36mMongoose:[0m users.distinct([32m'_id'[39m, { status: [32m'PENDING_BLOCK'[39m }, {})
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'OPEN'[39m, [32m'PENDING_CONFIRMATION'[39m, [32m'CONFIRMED'[39m, [32m'PENDING_EXTENSION'[39m, [32m'FULL'[39m, [32m'CANCELED'[39m ] }, step: [33m4[39m }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m ] }, step: [33m4[39m, isSettled: [33mtrue[39m, amountSettled: [33mfalse[39m, dateForSettlement: { [32m'$lte'[39m: [33m1545897669482[39m } }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m, [32m'FULL'[39m, [32m'OPEN'[39m, [32m'CONFIRMED'[39m ] }, [32m'$or'[39m: [ { [32m'eventReminders.preCancellationDate'[39m: [33mfalse[39m }, { [32m'eventReminders.preStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.onStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.savedUserPreStart'[39m: [33mfalse[39m }, { [32m'eventReminders.accountSettle'[39m: [33mfalse[39m } ], isSettled: [33mfalse[39m }, { projection: {} })
+181227/080110.882, (1545897670882:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10096) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/080111.346, (1545897671346:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10097) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080120.971, (1545897680971:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10098) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080123.202, (1545897683202:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10099) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080130.746, (1545897690746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10100) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080131.191, (1545897691191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10101) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080140.746, (1545897700746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10102) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080141.191, (1545897701191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10103) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080150.746, (1545897710746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10104) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080151.191, (1545897711191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10105) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080200.746, (1545897720746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10106) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080201.191, (1545897721191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10107) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080210.746, (1545897730746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10108) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/080211.191, (1545897731191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10109) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080220.746, (1545897740746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10110) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080221.190, (1545897741190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10111) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080230.746, (1545897750746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10112) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080231.191, (1545897751191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10113) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080240.746, (1545897760746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10114) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080241.190, (1545897761190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10115) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080250.746, (1545897770746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10116) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080251.191, (1545897771191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10117) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/080300.746, (1545897780746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10118) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080301.191, (1545897781191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10119) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+[0;36mMongoose:[0m users.distinct([32m'_id'[39m, { status: [32m'PENDING_BLOCK'[39m }, {})
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'OPEN'[39m, [32m'PENDING_CONFIRMATION'[39m, [32m'CONFIRMED'[39m, [32m'PENDING_EXTENSION'[39m, [32m'FULL'[39m, [32m'CANCELED'[39m ] }, step: [33m4[39m }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m ] }, step: [33m4[39m, isSettled: [33mtrue[39m, amountSettled: [33mfalse[39m, dateForSettlement: { [32m'$lte'[39m: [33m1545897789488[39m } }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m, [32m'FULL'[39m, [32m'OPEN'[39m, [32m'CONFIRMED'[39m ] }, [32m'$or'[39m: [ { [32m'eventReminders.preCancellationDate'[39m: [33mfalse[39m }, { [32m'eventReminders.preStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.onStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.savedUserPreStart'[39m: [33mfalse[39m }, { [32m'eventReminders.accountSettle'[39m: [33mfalse[39m } ], isSettled: [33mfalse[39m }, { projection: {} })
+181227/080310.951, (1545897790951:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10120) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080311.361, (1545897791361:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10121) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080321.076, (1545897801076:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10122) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/080323.236, (1545897803236:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10123) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080330.746, (1545897810746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10124) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080331.191, (1545897811191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10125) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080340.746, (1545897820746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10126) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080341.190, (1545897821190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10127) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080350.746, (1545897830746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10128) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080351.191, (1545897831191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10129) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080400.746, (1545897840746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10130) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080401.191, (1545897841191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10131) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080410.746, (1545897850746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10132) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080411.191, (1545897851191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10133) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080420.747, (1545897860747:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10134) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (2ms)
+181227/080421.191, (1545897861191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10135) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080430.746, (1545897870746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10136) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080431.191, (1545897871191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10137) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080440.746, (1545897880746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10138) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080441.191, (1545897881191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10139) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080450.747, (1545897890747:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10140) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080451.191, (1545897891191:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10141) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)
+181227/080500.746, (1545897900746:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10142) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080501.190, (1545897901190:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10143) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (4ms)
+[0;36mMongoose:[0m users.distinct([32m'_id'[39m, { status: [32m'PENDING_BLOCK'[39m }, {})
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'OPEN'[39m, [32m'PENDING_CONFIRMATION'[39m, [32m'CONFIRMED'[39m, [32m'PENDING_EXTENSION'[39m, [32m'FULL'[39m, [32m'CANCELED'[39m ] }, step: [33m4[39m }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m ] }, step: [33m4[39m, isSettled: [33mtrue[39m, amountSettled: [33mfalse[39m, dateForSettlement: { [32m'$lte'[39m: [33m1545897909493[39m } }, { projection: {} })
+[0;36mMongoose:[0m events.find({ status: { [32m'$in'[39m: [ [32m'COMPLETED'[39m, [32m'FULL'[39m, [32m'OPEN'[39m, [32m'CONFIRMED'[39m ] }, [32m'$or'[39m: [ { [32m'eventReminders.preCancellationDate'[39m: [33mfalse[39m }, { [32m'eventReminders.preStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.onStartDate'[39m: [33mfalse[39m }, { [32m'eventReminders.savedUserPreStart'[39m: [33mfalse[39m }, { [32m'eventReminders.accountSettle'[39m: [33mfalse[39m } ], isSettled: [33mfalse[39m }, { projection: {} })
+181227/080510.899, (1545897910899:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10144) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (1ms)
+181227/080511.382, (1545897911382:worker-workergsg-d8cc5bf8f-pnlqm:22:jq6b9tep:10145) [response,api,user] http://worker-workergsg-d8cc5bf8f-pnlqm:8008: [1;32mget[0m / {} [32m200[0m (0ms)

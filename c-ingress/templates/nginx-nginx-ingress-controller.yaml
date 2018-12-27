@@ -1,10 +1,10 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: fun-lightningbug 
+  name: nginx-nginx-ingress
   namespace: default
 data:
-  client-max-body-size: "100m"
+  proxy-body-size: "100m"
   proxy-connect-timeout: "15"
   proxy-read-timeout: "600"
   proxy-send-timeout: "600"
