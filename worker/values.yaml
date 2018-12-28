@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nikkkhil2908/worker
-  tag: v10
+  repository: registry.gitlab.com/nikkkhil2908/groupsetgo/worker
+  tag: v2
   pullPolicy: IfNotPresent
 
 nameOverride: ""

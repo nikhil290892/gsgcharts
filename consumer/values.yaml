@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nikkkhil2908/consumer
-  tag: v12
+  repository: registry.gitlab.com/nikkkhil2908/groupsetgo/consumer
+  tag: v1
   pullPolicy: IfNotPresent
 
 nameOverride: ""
