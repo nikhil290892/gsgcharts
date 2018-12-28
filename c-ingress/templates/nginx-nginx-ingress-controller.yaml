@@ -1,13 +1,18 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: nginx-nginx-ingress
+  name: nginx-nginx-ingress-controller
   namespace: default
+  labels:
+    app: nginx-ingress
+    component: controller
+    release: nginx
 data:
-  proxy-body-size: "100m"
-  proxy-connect-timeout: "15"
-  proxy-read-timeout: "600"
-  proxy-send-timeout: "600"
+  proxy-body-size: "99m"
+  proxy-connect-timeout: "600"
+  proxy-read-timeout: "6000"
+  proxy-send-timeout: "6000"
+  send-timeout: "6000"
   hsts-include-subdomains: "false"
   body-size: "64m"
   server-name-hash-bucket-size: "256"

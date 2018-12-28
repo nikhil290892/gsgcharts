@@ -1,0 +1,6 @@
+dependencies:
+- name: kubernetes-dashboard
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 0.7.0
+digest: sha256:af2e9c558c1995dbe59c7ea439cbcaed2856a1a704045cbafae7aed65fa4504a
+generated: 2018-06-12T17:07:54.708059183+01:00

@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ template "setup.fullname" .}}-kubernetes-dashboard
+  labels:
+    chart: {{ template "setup.fullname" .}}
+    k8s-app: {{ template "setup.fullname" .}}-kubernetes-dashboard
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: {{ template "setup.fullname" .}}-kubernetes-dashboard
+  namespace: kube-system
